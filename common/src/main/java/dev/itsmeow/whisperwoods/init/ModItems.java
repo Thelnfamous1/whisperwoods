@@ -5,7 +5,6 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import dev.itsmeow.whisperwoods.WhisperwoodsMod;
 import dev.itsmeow.whisperwoods.item.ItemBlockHirschgeistSkull;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -38,8 +37,8 @@ public class ModItems {
         return ITEMS.register(parent.getId().getPath(), () -> new BlockItem(parent.get(), new Item.Properties()));
     }
 
-    public static Set<Map.Entry<ResourceKey<Item>, Item>> getTabItems() {
-        return ITEMS.getRegistrar().entrySet();
+    public static Iterator<RegistrySupplier<Item>> getTabItems() {
+        return ITEMS.iterator();
     }
 
     public static void init() {

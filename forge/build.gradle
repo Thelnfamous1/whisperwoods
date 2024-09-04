@@ -12,13 +12,24 @@ loom {
         }
     }
     forge {
-        mixinConfig "mixin.imdlib-whisperwoods.json", "whisperwoods.mixins.json", "whisperwoods-forge.mixins.json"
+        mixinConfig "mixin.imdlib-whisperwoods.json", "whisperwoods.mixins.json", "whisperwoods-forge.mixins.json", "mixin.imdlib.json"
         accessTransformer(file("src/main/resources/META-INF/accesstransformer.cfg"))
     }
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 dependencies {
+    /*
     shadowModImplementation("dev.itsmeow.imdlib:imdlib-forge:${rootProject.imdlib_version}") {
+        transitive = false
+    }
+     */
+    shadowModImplementation("libs:imdlib:1.20.1-dev-forge") {
         transitive = false
     }
 }

@@ -10,6 +10,9 @@ loom {
 }
 
 repositories {
+    flatDir {
+        dirs 'libs'
+    }
     maven {
         name = "TerraformersMC"
         url = "https://maven.terraformersmc.com/"
@@ -23,7 +26,12 @@ repositories {
 }
 
 dependencies {
+    /*
     shadowModImplementation("dev.itsmeow.imdlib:imdlib-fabric:${rootProject.imdlib_version}") {
+        transitive = false
+    }
+    */
+    shadowModImplementation("libs:imdlib:1.20.1-dev-fabric") {
         transitive = false
     }
     modRuntimeOnly("com.terraformersmc:modmenu:${rootProject.mod_menu_version}") {

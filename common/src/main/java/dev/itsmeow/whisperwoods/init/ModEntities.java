@@ -50,7 +50,7 @@ public class ModEntities {
     "owl",
     "vampire")
     .biomesOverworld(BiomeTypes.FOREST, BiomeTypes.SWAMP)
-    .containers("bottled_%s", ItemModEntityContainer.get(ModCreativeTabs.WHISPERWOODS.get()), "", c -> Items.GLASS_BOTTLE, EntityMoth::bottleTooltip));
+    .containers("bottled_%s", ItemModEntityContainer.get(ModCreativeTabs.WHISPERWOODS), "", c -> Items.GLASS_BOTTLE, EntityMoth::bottleTooltip));
 
     public static final EntityTypeContainer<EntityHidebehind> HIDEBEHIND = H.add(EntityHidebehind.class, EntityHidebehind::new, "hidebehind", () -> Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 20D).add(Attributes.ATTACK_DAMAGE).add(Attributes.ATTACK_DAMAGE, 15D), b -> b
     .spawn(MobCategory.MONSTER, 8, 1, 1)

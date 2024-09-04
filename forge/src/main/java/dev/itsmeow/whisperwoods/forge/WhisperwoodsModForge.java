@@ -2,6 +2,7 @@ package dev.itsmeow.whisperwoods.forge;
 
 import dev.architectury.platform.Platform;
 import dev.architectury.platform.forge.EventBuses;
+import dev.itsmeow.imdlib.util.ClassLoadHacks;
 import dev.itsmeow.whisperwoods.WhisperwoodsMod;
 import dev.itsmeow.whisperwoods.client.init.ClientLifecycleHandler;
 import net.minecraftforge.api.distmarker.Dist;
@@ -20,8 +21,6 @@ public class WhisperwoodsModForge {
         modBus.<FMLCommonSetupEvent>addListener(e -> {
             WhisperwoodsMod.init(e::enqueueWork);
         });
-        if(Platform.getEnv() == Dist.CLIENT){
-            ClientLifecycleHandler.registerEntityRenders();
-        }
+        ClassLoadHacks.runIf(Platform.getEnv() == Dist.CLIENT, () -> ClientLifecycleHandler::registerEntityRenders);
     }
 }

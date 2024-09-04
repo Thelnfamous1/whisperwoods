@@ -2,8 +2,18 @@ apply from: "https://maven.itsmeow.dev/scripts/architectury-common.gradle"
 loom {
     accessWidenerPath = file("src/main/resources/whisperwoods.accesswidener")
 }
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
 dependencies {
+    /*
     modCompileOnlyApi("dev.itsmeow.imdlib:imdlib-common:${rootProject.imdlib_version}") {
+        transitive = false
+    }
+     */
+    modCompileOnlyApi("libs:imdlib:1.20.1-dev") {
         transitive = false
     }
 }
