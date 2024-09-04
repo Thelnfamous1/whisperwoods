@@ -8,7 +8,7 @@ configurations {
 loom {
     runs {
         configureEach {
-            property "-mixin.config", "mixin.imdlib.json"
+            programArg("-mixin.config=mixin.imdlib.json")
         }
     }
     forge {
