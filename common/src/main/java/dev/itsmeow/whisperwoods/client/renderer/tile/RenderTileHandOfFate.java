@@ -24,7 +24,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class RenderTileHandOfFate implements BlockEntityRenderer<HandOfFateBlockEntity> {
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(WhisperwoodsMod.MODID, "textures/blocks/hand_of_fate.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(WhisperwoodsMod.MODID, "textures/block/hand_of_fate.png");
     private final ModelHandOfFate model;
     private ItemStack istack = null;
 
